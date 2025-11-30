@@ -1,0 +1,132 @@
+📱 COMO BAIXAR O ZIP NO TERMUX (Android)
+
+════════════════════════════════════════════════════════════
+
+OPÇÃO 1: PELO NAVEGADOR (MAIS FÁCIL) ⭐
+────────────────────────────────────────
+
+1. Abra seu navegador no celular
+   (Chrome, Firefox, etc)
+
+2. Acesse o Replit do seu projeto
+
+3. Clique na PASTA (ícone de pasta no lado esquerdo)
+
+4. Procure por:
+   📁 attached_assets
+   └── 📦 NaufraBot-Backup-ATUALIZADO.zip
+
+5. Clique com botão direito no arquivo ZIP
+
+6. Escolha "Download"
+
+7. Arquivo será salvo em:
+   /storage/emulated/0/Download/
+
+✅ PRONTO!
+
+════════════════════════════════════════════════════════════
+
+OPÇÃO 2: PELO TERMUX (Se quiser via comando)
+──────────────────────────────────────────────
+
+1. Abra Termux no seu celular
+
+2. Execute este comando:
+   
+   wget -O ~/NaufraBot.zip "https://seu-replit.replit.dev/download/attached_assets/NaufraBot-Backup-ATUALIZADO.zip"
+
+   ⚠️ IMPORTANTE: Substitua "seu-replit" pela URL real do seu projeto
+
+3. Aguarde o download terminar
+
+4. Arquivo estará em:
+   ~/NaufraBot.zip
+
+════════════════════════════════════════════════════════════
+
+OPÇÃO 3: TRANSFERÊNCIA VIA GITHUB (Mais confiável)
+───────────────────────────────────────────────────
+
+Se você já colocou o código no GitHub:
+
+1. Abra Termux
+
+2. Execute:
+   
+   git clone https://github.com/seu-usuario/naufrabot.git
+
+   (substitua seu-usuario pelo seu username do GitHub)
+
+3. Entre na pasta:
+   
+   cd naufrabot
+
+4. Pronto! Todos os arquivos estão lá
+
+════════════════════════════════════════════════════════════
+
+OPÇÃO 4: VIA REPLIT CLI (Avançado)
+───────────────────────────────────
+
+Se tem o Replit CLI:
+
+1. No Replit, gere um token: Settings → API
+
+2. No Termux:
+   
+   replit download seu-projeto-id
+
+════════════════════════════════════════════════════════════
+
+🎯 RECOMENDAÇÃO:
+
+Se você está no celular agora: Use OPÇÃO 1 (navegador)
+Se quer guardar forever: Use OPÇÃO 3 (GitHub)
+Se já tem código pronto: Use OPÇÃO 4 (CLI)
+
+════════════════════════════════════════════════════════════
+
+APÓS BAIXAR O ZIP:
+
+1. Descompacte no celular:
+   
+   unzip ~/NaufraBot.zip -d ~/NaufraBot/
+
+2. Você terá a pasta com todos os arquivos
+
+3. Agora pode fazer upload no GitHub:
+   
+   cd ~/NaufraBot
+   git init
+   git add .
+   git commit -m "NaufraBot"
+   git branch -M main
+   git remote add origin https://github.com/seu-usuario/naufrabot.git
+   git push -u origin main
+
+════════════════════════════════════════════════════════════
+
+❓ QUAL USAR?
+
+Está no CELULAR agora:
+  └─ Use navegador (OPÇÃO 1) - 30 segundos
+
+Quer GITHUB:
+  └─ Use OPÇÃO 3 (git clone) - 2 minutos
+
+Quer TERMUX:
+  └─ Use wget (OPÇÃO 2) - 2 minutos
+
+════════════════════════════════════════════════════════════
+
+LINKS DIRETOS:
+
+GitHub: https://github.com
+Termux: Já deve estar instalado
+
+════════════════════════════════════════════════════════════
+
+Criado: 30/11/2025
+Para: NaufraBot Deploy
+Status: 100% Português ✅
