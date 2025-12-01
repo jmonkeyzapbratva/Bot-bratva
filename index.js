@@ -231,7 +231,7 @@ const sol = `
 await sock.sendMessage(anu.id, {
   image: { url: "https://i.ibb.co/HDf3hw9J/20250702-214923.jpg" },
   caption: sol,
-  mentions: [num]  // 👈 Aquí haces la mención real
+  mentions: [num]  // 👈 Aquí haces a mención real
 })
 }
 if (anu.action == 'promote') {
@@ -367,7 +367,7 @@ function esAdminFlexible(sock, listaDeAdmins = []) {
   const botId = sock.authState.creds.me.id;   // ej: 51916525000:26@lid
   const botLid = sock.authState.creds.me.lid; // ej: 51916525000@lid
 
-  const clean = (jid) => jid?.split(':')[0]; // elimina el ":26" si existe
+  const clean = (jid) => jid?.split(':')[0]; // elimina o ":26" si existe
 
   return listaDeAdmins.some(adminJid => {
     const adminBase = clean(adminJid);
@@ -645,8 +645,8 @@ sock.updateBlockStatus(sender, 'block')
 }
 
 // INICIO DE COMANDOS
-//solo funciona si está activado el bot
-// Si el grupo está en modo admin y el usuario no es admin ni owner, se bloquea su acceso
+//solo funciona si está activado o bot
+// Si o grupo está en modo admin y o usuario no es admin ni owner, se bloquea su acceso
 if (isModoAdmin && !isGroupAdmins && !isOwner) return;
 if (!botActivo && !isOwner) return
 
@@ -679,18 +679,18 @@ case 'boton':
 case 'botonon':
 case 'encenderbot':
   if (!isOwner) return enviar(respuesta.miowner)
-  if (botActivo) return enviar('✅ El bot ya está encendido.')
+  if (botActivo) return enviar('✅ o bot ya está encendido.')
   guardarEstadoBot(true)
-  enviar('🤖 El bot ha sido *ACTIVADO* y volverá a responder a los comandos.')
+  enviar('🤖 o bot ha sido *ACTIVADO* y volverá a responder a los comandos.')
 break
 
 case 'botoff':
 case 'apagabot':
 case 'offbot':
   if (!isOwner) return enviar(respuesta.miowner)
-  if (!botActivo) return enviar('⚠️ El bot ya estaba apagado.')
+  if (!botActivo) return enviar('⚠️ o bot ya estaba apagado.')
   guardarEstadoBot(false)
-  enviar('😴 El bot ha sido *DESACTIVADO* y dejará de responder a los comandos.')
+  enviar('😴 o bot ha sido *DESACTIVADO* y dejará de responder a los comandos.')
 break
 
 
@@ -725,7 +725,7 @@ case 'rvisu': case 'revelarvisu': case 'open':
             var viewVideo = vio?.videoMessage || info.message?.videoMessage || vio?.viewOnceMessageV2?.message?.videoMessage || info.message?.viewOnceMessageV2?.message?.videoMessage || info.message?.viewOnceMessage?.message?.videoMessage || vio?.viewOnceMessage?.message?.videoMessage
             viewVideo.viewOnce = false
             viewVideo.video = {url: viewVideo.url}
-            viewVideo.caption += "El vídeo fue *Revelado*"
+            viewVideo.caption += "O vídeo fue *Revelado*"
             sock.sendMessage(from, viewVideo)
         } else {
             var vio = info.message?.extendedTextMessage?.contextInfo?.quotedMessage
@@ -744,7 +744,7 @@ case 'rvisu': case 'revelarvisu': case 'open':
     
 case 'reiniciar': {
     console.log("=== DEBUG REINICIAR ===");
-    console.log("Número que ejecuta el comando:", sender);
+    console.log("Número que ejecuta o comando:", sender);
     console.log("Número(s) configurados como owner:", global.owner || owner || "No definido");
     console.log("¿Es owner?:", isOwner);
 
@@ -752,7 +752,7 @@ case 'reiniciar': {
 
     enviar('𝚁𝙴𝙸𝙽𝙸𝙲𝙸𝙰𝙽𝙳𝙾, 𝙰𝙶𝚄𝙰𝚁𝙳𝙴 𝚄𝙽 𝙼𝙾𝙼𝙴𝙽𝚃𝙾 ');
     setTimeout(async () => {
-        console.log("Reiniciando el bot...");
+        console.log("Reiniciando o bot...");
         process.exit(0);
     }, 1000);
 }
@@ -832,7 +832,7 @@ enviar(`💫 ¿𝙌𝙪𝙞𝙚𝙧𝙚𝙨 𝙪𝙣 𝙗𝙤𝙩 𝙘𝙤𝙢�
 
 
 *_________👑 𝘾𝙊𝙉𝙏𝙍𝘼𝙏𝙀 👑__________*
-[🔥] *Puedes contratar el bot directamente desde nuestra pagina web oficial*👇
+[🔥] *Puedes contratar o bot directamente desde nuestra pagina web oficial*👇
 [💬] https://naufrabot.com/`);
 break
 
@@ -940,7 +940,7 @@ case 'serbot':
 𝗦𝗶 𝗿𝗲𝗮𝗹𝗺𝗲𝗻𝘁𝗲 𝗾𝘂𝗲𝗿𝗲𝘀 𝘀𝗲𝗿 𝘀𝘂𝗯 𝗯𝗼𝘁, 𝗽𝘂𝗲𝗱𝗲𝘀 𝗼𝗯𝘁𝗲𝗻𝗲𝗿 𝗺𝗮𝘀 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝗰𝗶𝗼𝗻 𝗲𝗻 𝗻𝘂𝗲𝘀𝘁𝗿𝗮 𝗽𝗮𝗴𝗶𝗻𝗮 𝘄𝗲𝗯:  
 🔗 https://naufrabot.com/subbots/`;
 
-        // Enviar el mensaje final
+        // Enviar o mensaje final
         await enviar(moneybot);
 
     } catch (e) {
@@ -983,7 +983,7 @@ case 'bangp':{
     fs.writeFileSync(JsonGp, JSON.stringify(bngp));
     enviar('✅ GRUPO BANEADO EXITOSAMENTE')
   } else {
-    enviar('⚠️ El GRUPO YA SE ENCUENTRA BANEADO')
+    enviar('⚠️ o GRUPO YA SE ENCUENTRA BANEADO')
   }
 }
 break
@@ -997,7 +997,7 @@ case 'unbangp':{
     fs.writeFileSync(JsonGp, JSON.stringify(bngp));
     enviar('✅ GRUPO DESBANEADO EXITOSAMENTE')
   } else {
-    enviar('⚠️ El GRUPO YA SE ENCUENTRA DESBANEADO')
+    enviar('⚠️ o GRUPO YA SE ENCUENTRA DESBANEADO')
   }
 }
 break
@@ -1058,9 +1058,9 @@ case 'modoadmin': {
     if (!modoAdmin.includes(from)) {
       modoAdmin.push(from);
       fs.writeFileSync(JsonModoAdmin, JSON.stringify(modoAdmin, null, 2));
-      enviar("✅ *Modo admin activado* — Ahora solo los administradores pueden usar el bot en este grupo.");
+      enviar("✅ *Modo admin activado* — Ahora solo los administradores pueden usar o bot en este grupo.");
     } else {
-      enviar("⚠️ El modo admin ya estaba activado en este grupo.");
+      enviar("⚠️ o modo admin ya estaba activado en este grupo.");
     }
   } 
   
@@ -1068,9 +1068,9 @@ case 'modoadmin': {
     if (modoAdmin.includes(from)) {
       modoAdmin = modoAdmin.filter(g => g !== from);
       fs.writeFileSync(JsonModoAdmin, JSON.stringify(modoAdmin, null, 2));
-      enviar("🟢 *Modo admin desactivado* — Todos los miembros pueden usar el bot nuevamente.");
+      enviar("🟢 *Modo admin desactivado* — Todos los miembros pueden usar o bot nuevamente.");
     } else {
-      enviar("⚠️ El modo admin ya estaba desactivado en este grupo.");
+      enviar("⚠️ o modo admin ya estaba desactivado en este grupo.");
     }
   } 
   
@@ -1279,18 +1279,18 @@ case 'attp':
 case 'attp2': 
 case 'attp3': 
 try {
-    if (!q.trim()) return enviar(`*_❕Escribe el texto que quieras!_*\n- *🧑‍🏫 Por Exemplo:* !attp te amo`);
+    if (!q.trim()) return enviar(`*_❕Escribe o texto que quieras!_*\n- *🧑‍🏫 Por Exemplo:* !attp te amo`);
     enviar('*Ok amor❤️ Estoy convirtiendo*');
 
     var Fontes = commandArgs === "attp2" ? "Roboto" : "Noto Emoji, Noto Sans Mono";
 
-    // Descargar el sticker como buffer
+    // Descargar o sticker como buffer
     let axios = require("axios");
     let res = await axios.get(`https://api.bronxyshost.com.br/api-bronxys/attp_edit?texto=${encodeURIComponent(q)}&fonte=${Fontes}&apikey=${API_KEY_NAUFRA}`, {
         responseType: 'arraybuffer'
     });
 
-    // Enviar el sticker desde el buffer
+    // Enviar o sticker desde o buffer
     await sock.sendMessage(from, { sticker: res.data }, { quoted: info });
 
 } catch (e) {
@@ -1386,7 +1386,7 @@ case 'generarnick': case 'nick':
 try {
 if(!q.trim()) return enviar(`Digite seu nome para enviar com letras especiais, Exemplo: !nick NaufraBot`);
 ABC = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/gerar_nick?nick=${encodeURI(q)}&apikey=${API_KEY_NAUFRA}`)
-AB = `*🗒️Lista a base de su nombre,* Escoja la mejor fuente que desea utilizar:\n\n`;
+AB = `*🗒️Lista a base de su nombre,* Escoja a mejor fuente que desea utilizar:\n\n`;
 for ( i of ABC) {
 AB += `${i}\n\n`;
 }
@@ -1400,7 +1400,7 @@ break;
 //nesecitas api
 case 'ia': case 'openai': case 'gpt': case 'chatgpt':
 try {
-  if (!q || !q.trim()) return enviar(`Escribe tu pregunta, Exemplo: .ia ¿Cuál es la capital de Francia?`);
+  if (!q || !q.trim()) return enviar(`Escribe tu pregunta, Exemplo: .ia ¿Cuál es a capital de Francia?`);
   
   enviar("*🔍 BUSCANDO 🔍*");
   ABC = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/PERGUNTE_E_EU_RESPONDO?q=${encodeURIComponent(q.trim())}&apikey=${API_KEY_NAUFRA}`)
@@ -1463,7 +1463,7 @@ if (tiempoRestante > 0) {
 // Restar una moneda por jugar
 await delkoin(sender, apuestas);
 
-// Lista de símbolos para la tragamonedas
+// Lista de símbolos para a tragamonedas
 const simbolos = ['🥕', '🐰', '🐸', '🦊', '🐱', '🍋', '🔔', '🍒', '🍉', '🍌'];
 
 // Generar filas aleatorias
@@ -1488,7 +1488,7 @@ if (probabilidad < 0.6) {
     filaCentro = obtenerFila(); // Si no, generar aleatoriamente
 }
 
-// Verificar si el usuario ganó
+// Verificar si o usuario ganó
 const esGanador = filaCentro[0] === filaCentro[1] && filaCentro[1] === filaCentro[2];
 
 let resultadoMensaje = "😢 Has perdido... Inténtalo de novo dentro de 8 horas.";
@@ -1526,7 +1526,7 @@ ${resultadoMensaje}
 ${premioTexto}
 `;
 
-// Enviar el mensaje después de 3 segundos
+// Enviar o mensaje después de 3 segundos
 setTimeout(() => {
     enviar(mensajeCasino);
 }, 3000);
@@ -1662,13 +1662,13 @@ if (pptb === "muere") {
 💭「𝙍𝙖𝙯𝙚𝙧 🐺 𝙖𝙥𝙧𝙚𝙩𝙖 𝙚𝙡 𝙜𝙖𝙩𝙞𝙡𝙡𝙤... 💥 𝘽𝙊𝙊𝙈!」
 💭「${pushname} 𝙝𝙖 𝙘𝙖í𝙙𝙤 𝙮 𝙥𝙚𝙧𝙙𝙞ó ${monto} Rupias 🪙」`;
     await delkoin(sender, monto);
-    // El jugador pierde
+    // o jugador pierde
 } else if (pptb === "vive") {
     vit = `💭「𝙍𝙖𝙯𝙚𝙧, 𝙚𝙡 𝙎𝙞𝙣 𝙈𝙞𝙚𝙙𝙤 🐺 𝙖𝙥𝙪𝙣𝙩𝙖 𝙖 𝙡𝙖 𝙘𝙖𝙗𝙚𝙯𝙖 𝙙𝙚 ${pushname} 😨🔫」
 💭「𝙍𝙖𝙯𝙚𝙧 🐺 𝙖𝙥𝙧𝙚𝙩𝙖 𝙚𝙡 𝙜𝙖𝙩𝙞𝙡𝙡𝙤... 💥 𝘽𝙊𝙊𝙈!」
 💭「𝙀𝙨 𝙪𝙣𝙖 𝙗𝙧𝙤𝙢𝙖, ${pushname} 𝙨𝙤𝙗𝙧𝙚𝙫𝙞𝙫𝙚 𝙮 𝙜𝙖𝙣𝙖 ${monto} Rupias 🪙」`;
     await addkoin(sender, monto);
-    // El jugador gana
+    // o jugador gana
 }
 
 const datatt = `
@@ -1709,7 +1709,7 @@ let vit;
 if (pptb === "delfin") {
     vit = `💭「𝙃𝙖𝙨 𝙖𝙩𝙧𝙖𝙥𝙖𝙙𝙤 𝙪𝙣 🦈 𝙮 𝙖𝙡 𝙫𝙚𝙣𝙙𝙚𝙧𝙡𝙤 𝙖 𝙆𝙖𝙞 🐯 𝙜𝙖𝙣𝙖𝙨 20 𝙙𝙚 𝙀𝙓𝙋 📚」`;
     await addXp(sender, 20);
-    // El jugador gana
+    // o jugador gana
 } else if (pptb === "pulpo") {
     vit = `💭「𝙃𝙖𝙨 𝙖𝙩𝙧𝙖𝙥𝙖𝙙𝙤 𝙪𝙣 🐙 𝙮 𝙖𝙡 𝙫𝙚𝙣𝙙𝙚𝙧𝙡𝙤 𝙖 𝙆𝙖𝙞 🐯 𝙧𝙚𝙘𝙞𝙗𝙚𝙨 8 𝙍𝙪𝙥𝙞𝙖𝙨 💎」`;
     await addkoin(sender, 8);
@@ -1863,7 +1863,7 @@ case 'rankcoins': {
   if(!isGroupAdmins) return enviar(respuesta.admin)
   const pathi = './settings/Grupo/Json/registros.json';
 
-  // Leer los datos actualizados en el momento
+  // Leer los datos actualizados en o momento
   const registro = JSON.parse(fs.readFileSync(pathi, 'utf8'));
 
   let rankingMensaje = `*🏆 RANKING DE MILLONARIOS*\n\nTOP.  USUARIO.   RUPIAS\n\n`;
@@ -1950,7 +1950,7 @@ if (q.startsWith("2")) {
     }
 
     if (coins < 50) {
-        return enviar("❌ No tienes suficientes Coins para cambiar el nombre del rango. Necesitas 50 Coins.");
+        return enviar("❌ No tienes suficientes Coins para cambiar o nombre del rango. Necesitas 50 Coins.");
     }
 
     const path = './settings/rangos.json';
@@ -1959,7 +1959,7 @@ if (q.startsWith("2")) {
     try {
         rangosData = JSON.parse(fs.readFileSync(path));
     } catch (e) {
-        return enviar("⚠️ Erro ao ler os rangos. Asegúrate de que el archivo exista y esté bien formado.");
+        return enviar("⚠️ Erro ao ler os rangos. Asegúrate de que o archivo exista y esté bien formado.");
     }
 
     rangosData[nivel] = novoNombre;
@@ -1968,9 +1968,9 @@ if (q.startsWith("2")) {
         fs.writeFileSync(path, JSON.stringify(rangosData, null, 2));
         await delkoin(sender, 50);
 
-        return enviar(`✅ ¡Perfecto, ${pushname}!\nHas cambiado el rango del nivel *${nivel}* a:\n✨ *${novoNombre}* ✨\nY se descontaron 50 Rupias 🪙`);
+        return enviar(`✅ ¡Perfecto, ${pushname}!\nHas cambiado o rango del nivel *${nivel}* a:\n✨ *${novoNombre}* ✨\nY se descontaron 50 Rupias 🪙`);
     } catch (e) {
-        return enviar("⚠️ No se pudo guardar el novo nome. Intenta de novo.");
+        return enviar("⚠️ No se pudo guardar o novo nome. Intenta de novo.");
     }
 }
 
@@ -1979,7 +1979,7 @@ break;
 //DESCARGAS
 //alternativa local - sin API externa
 case 'play': case 'p':
-    if (!q) return enviar(`- Exemplo: !play nombre de la canción\nLa canción se descargará, solo elige audio o video.`);
+    if (!q) return enviar(`- Exemplo: !play nombre de a canción\nLa canción se descargará, solo elige audio o video.`);
     try {
         await enviar("🔍 Buscando música...");
         
@@ -1996,9 +1996,9 @@ case 'play': case 'p':
 ▧⃯⃟⏱️• 𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${video.duracion}
 ▧⃯⃟📺• 𝐂𝐚𝐧𝐚𝐥: ${video.canal}
 
-⏳ Descargando audio...
+⏳ Baixando audio...
 
-Si deseas el video, usa !playvideo ${q.trim()}
+Se deseja o video, usa !playvideo ${q.trim()}
         `;
 
         await sock.sendMessage(from, {image: {url: video.thumbnail}, caption: caption}, {quoted: info});
@@ -2012,12 +2012,12 @@ Si deseas el video, usa !playvideo ${q.trim()}
             fs.unlinkSync(audioPath);
         } catch (downloadErr) {
             console.log('Error download:', downloadErr);
-            return enviar("❌ Erro ao baixar el audio. Intenta con otra canción.");
+            return enviar("❌ Erro ao baixar o audio. Intenta con otra canción.");
         }
 
     } catch (e) {
         console.log(e);
-        return enviar("❌ No se pudo encontrar la música. Intenta con otro nombre.");
+        return enviar("❌ No se pudo encontrar a música. Intenta con otro nombre.");
     }
 break;
 
@@ -2044,9 +2044,9 @@ case 'playvideo': case 'pvid': case 'playmp4':
 ⏰⃤𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${video.duracion}
 📺⃤𝐂𝐚𝐧𝐚𝐥: ${video.canal}
 
-⏳ Descargando video...
+⏳ Baixando video...
 
-Si deseas solo el audio, usa !play ${q.trim()}
+Se deseja solo o audio, usa !play ${q.trim()}
         `;
         
         await sock.sendMessage(from, {image: {url: video.thumbnail}, caption: bla}, {quoted: info});
@@ -2064,12 +2064,12 @@ Si deseas solo el audio, usa !play ${q.trim()}
             fs.unlinkSync(videoPath);
         } catch (downloadErr) {
             console.log('Error download video:', downloadErr);
-            return enviar("❌ Erro ao baixar el video. Intenta con otro.");
+            return enviar("❌ Erro ao baixar o video. Intenta con otro.");
         }
 
     } catch (e) {
         console.log(e);
-        return enviar("❌ No se pudo encontrar el video. Intenta con otro nombre.");
+        return enviar("❌ No se pudo encontrar o video. Intenta con otro nombre.");
     }
 }
 break;
@@ -2081,25 +2081,25 @@ case 'tiktokvideo':
 try {
     if(!q) return enviar('Por favor, proporciona un enlace de TikTok válido.');
     
-    enviar("Procesando el video...");
+    enviar("Processando o video...");
     
-    // Realiza la solicitud a la API
+    // Realiza a solicitud a a API
     let response = await fetch(`https://api.bronxyshost.com.br/api-bronxys/tiktok?url=${q}&apikey=${API_KEY_NAUFRA}`);
     
-    // Verifica si la respuesta es JSON válida
+    // Verifica se a respuesta es JSON válida
     let contentType = response.headers.get("content-type");
     
     if(contentType && contentType.includes("application/json")) {
-        // Procesa la respuesta como JSON
+        // Processa a respuesta como JSON
         let ABC = await response.json();
-        enviar("No se pudo descargar el video. Por favor, intenta nuevamente.");
+        enviar("No se pudo descargar o video. Por favor, intenta nuevamente.");
     } else {
-        // Procesa la respuesta como un archivo binario
+        // Processa a respuesta como un archivo binario
         let buffer = await response.buffer();
         sock.sendMessage(from, { video: buffer, mimetype: 'video/mp4' }, { quoted: info });
     }
 } catch (e) {
-    enviar("Ocurrió un error al intentar descargar el video.");
+    enviar("Ocurrió un error al intentar descargar o video.");
 }
 break;
 
@@ -2123,13 +2123,13 @@ break;
 
 //nesecitas api
 case 'buscarapk': 
-; // Verificación si el usuario es premium
+; // Verificación si o usuario es premium
 if (!q.trim()) return enviar(`Exemplo: !buscarapk WhatsApp`); // Asegurarse de que haya una búsqueda
 
 try {
     enviar('Espera un momento estoy enviando'); // Mensaje de espera
-    let abc = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/aptoide_pesquisa?pesquisa=${q.trim()}&apikey=${API_KEY_NAUFRA}`); // Llamada a la API
-    enviar(abc.aptoide || 'No se encontró ninguna información.'); // Respuesta con la información o mensaje de error
+    let abc = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/aptoide_pesquisa?pesquisa=${q.trim()}&apikey=${API_KEY_NAUFRA}`); // Llamada a a API
+    enviar(abc.aptoide || 'No se encontró ninguna información.'); // Respuesta con a información o mensaje de error
 } catch (e) {
     console.log(e);
     return enviar(mess.error()); // Mensaje de error en caso de fallo
@@ -2140,7 +2140,7 @@ break;
 
 case "descargarapk":
 ;
-if (!q.trim().includes("aptoide.com")) return enviar(`Exemplo: !descargarapk link de la aplicación\n\nUse el comando !buscarapk Exemplo: whatsapp, y usted recibirá una url, pegue la url despues del comando para descargarla.`);
+if (!q.trim().includes("aptoide.com")) return enviar(`Exemplo: !descargarapk link de a aplicación\n\nUse o comando !buscarapk Exemplo: whatsapp, y usted recibirá una url, pegue a url despues del comando para descargarla.`);
 enviar('Espera un momento estoy enviando tu apk');
 try {
     abc = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/aptoide?url=${q.trim()}&apikey=${API_KEY_NAUFRA}`);
@@ -2193,7 +2193,7 @@ if (isGroup && isAntiLink && !isGroupAdmins && !isOwner) {
     if (!isBotGroupAdmins) return enviar("⚠️ No soy administrador, no puedo expulsar.")
 
     const member = groupMetadata.participants.find(p => p.id === sender)
-    if (!member) return console.log("⚠️ El usuario ya no está en el grupo.")
+    if (!member) return console.log("⚠️ o usuario ya no está en o grupo.")
 
     const Kick = jidNormalizedUser(sender)
     console.log("👞 Intentando expulsar a:", Kick)
@@ -2208,7 +2208,7 @@ if (isGroup && isAntiLink && !isGroupAdmins && !isOwner) {
       const result = await sock.groupParticipantsUpdate(from, [Kick], "remove")
       console.log("✅ Resultado expulsión:", result)
 
-      await enviar(`🚫 Se detectó un link prohibido, el usuario @${sender.split("@")[0]} fue eliminado`, { mentions: [sender] })
+      await enviar(`🚫 Se detectó un link prohibido, o usuario @${sender.split("@")[0]} fue eliminado`, { mentions: [sender] })
 
     } catch (err) {
       console.log("❌ Error al ejecutar antilink:")
@@ -2268,7 +2268,7 @@ console.log('Error : %s', color(e, 'red'))
 startProo()
 fs.watchFile('./index.js', (curr, prev) => {
 if (curr.mtime.getTime() !== prev.mtime.getTime()) {
-console.log(color('  [❗] El archivo Index fue modificada',"blue"));
+console.log(color('  [❗] o archivo Index fue modificada',"blue"));
 process.exit()
 }
 })
