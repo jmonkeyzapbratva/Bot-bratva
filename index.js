@@ -1279,7 +1279,7 @@ case 'attp':
 case 'attp2': 
 case 'attp3': 
 try {
-    if (!q.trim()) return enviar(`*_❕Escribe el texto que quieras!_*\n- *🧑‍🏫 Por ejemplo:* !attp te amo`);
+    if (!q.trim()) return enviar(`*_❕Escribe el texto que quieras!_*\n- *🧑‍🏫 Por Exemplo:* !attp te amo`);
     enviar('*Ok amor❤️ Estoy convirtiendo*');
 
     var Fontes = commandArgs === "attp2" ? "Roboto" : "Noto Emoji, Noto Sans Mono";
@@ -1400,7 +1400,7 @@ break;
 //nesecitas api
 case 'ia': case 'openai': case 'gpt': case 'chatgpt':
 try {
-  if (!q || !q.trim()) return enviar(`Escribe tu pregunta, Ejemplo: .ia ¿Cuál es la capital de Francia?`);
+  if (!q || !q.trim()) return enviar(`Escribe tu pregunta, Exemplo: .ia ¿Cuál es la capital de Francia?`);
   
   enviar("*🔍 BUSCANDO 🔍*");
   ABC = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/PERGUNTE_E_EU_RESPONDO?q=${encodeURIComponent(q.trim())}&apikey=${API_KEY_NAUFRA}`)
@@ -1491,7 +1491,7 @@ if (probabilidad < 0.6) {
 // Verificar si el usuario ganó
 const esGanador = filaCentro[0] === filaCentro[1] && filaCentro[1] === filaCentro[2];
 
-let resultadoMensaje = "😢 Has perdido... Inténtalo de nuevo dentro de 8 horas.";
+let resultadoMensaje = "😢 Has perdido... Inténtalo de novo dentro de 8 horas.";
 let premioTexto = "";
 
 // Si gana, recibe aleatoriamente Coins o EXP entre 5 y 10
@@ -1639,7 +1639,7 @@ if (!q) return enviar(`Indique um valor para apostar, exemplo .ruleta 4`);
 if (!isReg) return enviar(respuesta.registro)
 const montto = q
 const monto = (montto * 1) / 1
-if (isNaN(monto)) return enviar(`Indique un monto válido en coins`);
+if (isNaN(monto)) return enviar(`Indique um monto válido en coins`);
 if (monto > MoneyOfSender(sender)) return enviar(`No tienes suficiente dinero`);
 if (monto > 5) return enviar('La apuesta no debe ser mayor a 5 Rupias');
 const isMinxxx = checkRuleta(sender)
@@ -1789,7 +1789,7 @@ case 'enviar': {
       await addkoin(mencionado, monto);
       await sleep(100);
 
-      const nuevoSaldo = await MoneyOfM(emisor);
+      const novoSaldo = await MoneyOfM(emisor);
       enviar(`✅ Transferencia completada.\nUsted envió *₹${monto} Rupias.*`, {
         mentions: [emisor, mencionado]
       });
@@ -1943,10 +1943,10 @@ if (q.startsWith("1")) {
 if (q.startsWith("2")) {
     const args = q.split(" ");
     const nivel = parseInt(args[1]);
-    const nuevoNombre = args.slice(2).join(" ");
+    const novoNombre = args.slice(2).join(" ");
 
-    if (isNaN(nivel) || !nuevoNombre) {
-        return enviar("❌ Use o comando corretamente: .tienda 2 <nivel> <novo nome>\nEjemplo: .tienda 2 8 Los Poderosos");
+    if (isNaN(nivel) || !novoNombre) {
+        return enviar("❌ Use o comando corretamente: .tienda 2 <nivel> <novo nome>\nExemplo: .tienda 2 8 Los Poderosos");
     }
 
     if (coins < 50) {
@@ -1962,15 +1962,15 @@ if (q.startsWith("2")) {
         return enviar("⚠️ Erro ao ler os rangos. Asegúrate de que el archivo exista y esté bien formado.");
     }
 
-    rangosData[nivel] = nuevoNombre;
+    rangosData[nivel] = novoNombre;
 
     try {
         fs.writeFileSync(path, JSON.stringify(rangosData, null, 2));
         await delkoin(sender, 50);
 
-        return enviar(`✅ ¡Perfecto, ${pushname}!\nHas cambiado el rango del nivel *${nivel}* a:\n✨ *${nuevoNombre}* ✨\nY se descontaron 50 Rupias 🪙`);
+        return enviar(`✅ ¡Perfecto, ${pushname}!\nHas cambiado el rango del nivel *${nivel}* a:\n✨ *${novoNombre}* ✨\nY se descontaron 50 Rupias 🪙`);
     } catch (e) {
-        return enviar("⚠️ No se pudo guardar el novo nome. Intenta de nuevo.");
+        return enviar("⚠️ No se pudo guardar el novo nome. Intenta de novo.");
     }
 }
 
@@ -1979,7 +1979,7 @@ break;
 //DESCARGAS
 //alternativa local - sin API externa
 case 'play': case 'p':
-    if (!q) return enviar(`- Ejemplo: !play nombre de la canción\nLa canción se descargará, solo elige audio o video.`);
+    if (!q) return enviar(`- Exemplo: !play nombre de la canción\nLa canción se descargará, solo elige audio o video.`);
     try {
         await enviar("🔍 Buscando música...");
         
@@ -2027,7 +2027,7 @@ case 'playvideo': case 'pvid': case 'playmp4':
 
 {
     try {
-        if (!q.trim()) return enviar(`- Ejemplo: !playvideo nombre del video\nEl video será descargado.`);
+        if (!q.trim()) return enviar(`- Exemplo: !playvideo nombre del video\nEl video será descargado.`);
         
         await enviar("🔍 Buscando video...");
         
@@ -2124,7 +2124,7 @@ break;
 //nesecitas api
 case 'buscarapk': 
 ; // Verificación si el usuario es premium
-if (!q.trim()) return enviar(`Ejemplo: !buscarapk WhatsApp`); // Asegurarse de que haya una búsqueda
+if (!q.trim()) return enviar(`Exemplo: !buscarapk WhatsApp`); // Asegurarse de que haya una búsqueda
 
 try {
     enviar('Espera un momento estoy enviando'); // Mensaje de espera
@@ -2140,7 +2140,7 @@ break;
 
 case "descargarapk":
 ;
-if (!q.trim().includes("aptoide.com")) return enviar(`Ejemplo: !descargarapk link de la aplicación\n\nUse el comando !buscarapk Ejemplo: whatsapp, y usted recibirá una url, pegue la url despues del comando para descargarla.`);
+if (!q.trim().includes("aptoide.com")) return enviar(`Exemplo: !descargarapk link de la aplicación\n\nUse el comando !buscarapk Exemplo: whatsapp, y usted recibirá una url, pegue la url despues del comando para descargarla.`);
 enviar('Espera un momento estoy enviando tu apk');
 try {
     abc = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/aptoide?url=${q.trim()}&apikey=${API_KEY_NAUFRA}`);
