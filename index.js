@@ -1295,7 +1295,7 @@ try {
 
 } catch (e) {
     console.error(e);
-    return enviar("Error..");
+    return enviar("Erro.."");
 }
 break;
 
@@ -1392,7 +1392,7 @@ AB += `${i}\n\n`;
 }
 enviar(AB);
 } catch (e) {
-return enviar("Error..");
+return enviar("Erro.."");
 }
 break;
 
@@ -1408,7 +1408,7 @@ try {
   enviar(`( ${ABC.msg} )`);
 } catch (err) { 
   console.error(err);
-  enviar("Error..");
+  enviar("Erro.."");
 }
 break;
 
@@ -1959,7 +1959,7 @@ if (q.startsWith("2")) {
     try {
         rangosData = JSON.parse(fs.readFileSync(path));
     } catch (e) {
-        return enviar("⚠️ Error al leer los rangos. Asegúrate de que el archivo exista y esté bien formado.");
+        return enviar("⚠️ Erro ao ler os rangos. Asegúrate de que el archivo exista y esté bien formado.");
     }
 
     rangosData[nivel] = nuevoNombre;
@@ -2012,7 +2012,7 @@ Si deseas el video, usa !playvideo ${q.trim()}
             fs.unlinkSync(audioPath);
         } catch (downloadErr) {
             console.log('Error download:', downloadErr);
-            return enviar("❌ Error al descargar el audio. Intenta con otra canción.");
+            return enviar("❌ Erro ao baixar el audio. Intenta con otra canción.");
         }
 
     } catch (e) {
@@ -2064,7 +2064,7 @@ Si deseas solo el audio, usa !play ${q.trim()}
             fs.unlinkSync(videoPath);
         } catch (downloadErr) {
             console.log('Error download video:', downloadErr);
-            return enviar("❌ Error al descargar el video. Intenta con otro.");
+            return enviar("❌ Erro ao baixar el video. Intenta con otro.");
         }
 
     } catch (e) {
@@ -2112,11 +2112,11 @@ if(!q.includes("tiktok")) return enviar(`!tiktokaudio link de Tiktok`);
 enviar("Realizando acción..");
 sock.sendMessage(from, {audio: {url:`https://api.bronxyshost.com.br/api-bronxys/tiktok?url=${q}&apikey=${API_KEY_NAUFRA}`}, mimetype: "audio/mpeg"}, {quoted: info}).catch(e => {
 console.log(e)
-return enviar("Error..")
+return enviar("Erro.."")
 })
 } catch (e) {
 console.log(e)
-return enviar("Error...");
+return enviar("Erro..."");
 }
 break;
 
@@ -2151,7 +2151,7 @@ try {
     }, { quoted: info }).catch((e) => console.log(e));
 } catch (e) {
     console.log(e);
-    return enviar("Error...");
+    return enviar("Erro..."");
 }
 break;
 
