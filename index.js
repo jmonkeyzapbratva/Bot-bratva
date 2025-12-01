@@ -1295,7 +1295,7 @@ try {
 
 } catch (e) {
     console.error(e);
-    return enviar("Erro..");;
+    return enviar("Erro..");
 }
 break;
 
@@ -1392,7 +1392,7 @@ AB += `${i}\n\n`;
 }
 enviar(AB);
 } catch (e) {
-return enviar("Erro..");;
+return enviar("Erro..");
 }
 break;
 
