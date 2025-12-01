@@ -1295,7 +1295,7 @@ try {
 
 } catch (e) {
     console.error(e);
-    return enviar("Erro.."");
+    return enviar("Erro..");;
 }
 break;
 
@@ -1392,7 +1392,7 @@ AB += `${i}\n\n`;
 }
 enviar(AB);
 } catch (e) {
-return enviar("Erro.."");
+return enviar("Erro..");;
 }
 break;
 
@@ -2112,7 +2112,7 @@ if(!q.includes("tiktok")) return enviar(`!tiktokaudio link de Tiktok`);
 enviar("Realizando acción..");
 sock.sendMessage(from, {audio: {url:`https://api.bronxyshost.com.br/api-bronxys/tiktok?url=${q}&apikey=${API_KEY_NAUFRA}`}, mimetype: "audio/mpeg"}, {quoted: info}).catch(e => {
 console.log(e)
-return enviar("Erro.."")
+return enviar("Erro..");
 })
 } catch (e) {
 console.log(e)
