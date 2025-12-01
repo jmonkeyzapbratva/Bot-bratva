@@ -1052,7 +1052,7 @@ case 'modoadmin': {
 
   const estado = args[0]; // puede ser "1" o "0"
 
-  if (!estado) return enviar("🧩 Usa el comando correctamente:\n\n*modoadmin 1* → Activar modo admin\n*modoadmin 0* → Desactivar modo admin");
+  if (!estado) return enviar("🧩 Use o comando corretamente:\n\n*modoadmin 1* → Activar modo admin\n*modoadmin 0* → Desactivar modo admin");
 
   if (estado === "1") {
     if (!modoAdmin.includes(from)) {
@@ -1384,7 +1384,7 @@ case 'nik': case 'nic':
 case 'generarnick': case 'nick':
 
 try {
-if(!q.trim()) return enviar(`Escriba su nombre para enviar con letras especiales, Ejemplo: !nick NaufraBot`);
+if(!q.trim()) return enviar(`Digite seu nome para enviar com letras especiais, Exemplo: !nick NaufraBot`);
 ABC = await fetchJson(`https://api.bronxyshost.com.br/api-bronxys/gerar_nick?nick=${encodeURI(q)}&apikey=${API_KEY_NAUFRA}`)
 AB = `*🗒️Lista a base de su nombre,* Escoja la mejor fuente que desea utilizar:\n\n`;
 for ( i of ABC) {
@@ -1635,7 +1635,7 @@ break
 
 
     case "ruleta": {
-if (!q) return enviar(`Indique un monto para apostar, ejemplo .ruleta 4`);
+if (!q) return enviar(`Indique um valor para apostar, exemplo .ruleta 4`);
 if (!isReg) return enviar(respuesta.registro)
 const montto = q
 const monto = (montto * 1) / 1
@@ -1946,7 +1946,7 @@ if (q.startsWith("2")) {
     const nuevoNombre = args.slice(2).join(" ");
 
     if (isNaN(nivel) || !nuevoNombre) {
-        return enviar("❌ Usa el comando correctamente: .tienda 2 <nivel> <nuevo nombre>\nEjemplo: .tienda 2 8 Los Poderosos");
+        return enviar("❌ Use o comando corretamente: .tienda 2 <nivel> <novo nome>\nEjemplo: .tienda 2 8 Los Poderosos");
     }
 
     if (coins < 50) {
@@ -1970,7 +1970,7 @@ if (q.startsWith("2")) {
 
         return enviar(`✅ ¡Perfecto, ${pushname}!\nHas cambiado el rango del nivel *${nivel}* a:\n✨ *${nuevoNombre}* ✨\nY se descontaron 50 Rupias 🪙`);
     } catch (e) {
-        return enviar("⚠️ No se pudo guardar el nuevo nombre. Intenta de nuevo.");
+        return enviar("⚠️ No se pudo guardar el novo nome. Intenta de nuevo.");
     }
 }
 
