@@ -42,23 +42,23 @@ const banner = cfonts.render("Naufra| Bot| Base", {
   gradient: ["green","blue"]
 })
       // FUNÇÕES DE DOWNLOAD 
-const { fetchJson , getBuffer ,fetchBuffer } = require('./fuction/download/gets.js')
-const { searchYouTube, downloadAudio, downloadVideo, getVideoInfo } = require('./fuction/download/music.js')
+const { fetchJson , getBuffer ,fetchBuffer } = require(path.join(__dirname, 'fuction', 'download', 'gets.js'))
+const { searchYouTube, downloadAudio, downloadVideo, getVideoInfo } = require(path.join(__dirname, 'fuction', 'download', 'music.js'))
 
 
-const {getExtension, getRandom } =require('./fuction/settings/fuctions.js')
+const {getExtension, getRandom } =require(path.join(__dirname, 'fuction', 'settings', 'fuctions.js'))
 
  //Stickers
-const { sendVideoAsSticker, sendImageAsSticker } = require('./fuction/sticker/rename.js');
-const { sendVideoAsSticker2, sendImageAsSticker2 } = require('./fuction/sticker/rename2.js');
+const { sendVideoAsSticker, sendImageAsSticker } = require(path.join(__dirname, 'fuction', 'sticker', 'rename.js'));
+const { sendVideoAsSticker2, sendImageAsSticker2 } = require(path.join(__dirname, 'fuction', 'sticker', 'rename2.js'));
  
  //Grupos js
-const { MoneyOfSender, addkoin, delkoin, AddReg, checkOfReg , addLevel, addXp,levelOfsender , xpOfsender ,checkOfRegM ,addkoinM , delkoinM , MoneyOfM,Rxp, addRxp ,addRep , delRep , repUser  } = require('./settings/Grupo/Js/reg.js')
+const { MoneyOfSender, addkoin, delkoin, AddReg, checkOfReg , addLevel, addXp,levelOfsender , xpOfsender ,checkOfRegM ,addkoinM , delkoinM , MoneyOfM,Rxp, addRxp ,addRep , delRep , repUser  } = require(path.join(__dirname, 'settings', 'Grupo', 'Js', 'reg.js'))
      
            // GAMES
-const  { addClaim , checkClaim , timeClaim ,expiredClaim } = require('./Games/Js/claim.js')
+const  { addClaim , checkClaim , timeClaim ,expiredClaim } = require(path.join(__dirname, 'Games', 'Js', 'claim.js'))
 const { checkCasino,checkAttp,checkEmoji,checkEve, addClaimTraga, checkClaimTraga, timeClaimTraga, checkRuleta,checkMinar,addCasino,addAttp,addEmoji,addEve,addRuleta ,addMinar,expiredCasino,expiredMinar,expiredAttp,expiredEmoji,expiredEve,expiredRuleta,timeAttp,timeEmoji,timeEve,timeRuleta,timeMinar,timeCasino,expiredDayli,JsonDayli,addDayli,timeDayli,checkDayli,checkPescar,timePescar,addPescar,expiredPescar}
- = require('./Games/Js/mining.js')
+ = require(path.join(__dirname, 'Games', 'Js', 'mining.js'))
 
 
 
@@ -67,17 +67,17 @@ const { checkCasino,checkAttp,checkEmoji,checkEve, addClaimTraga, checkClaimTrag
 
       
     // Menu bot js
-const Menu = require ('./settings/Bot/Js/menu.js')
+const Menu = require(path.join(__dirname, 'settings', 'Bot', 'Js', 'menu.js'))
 
  //configurar grupos
-const welkom = JSON.parse(fs.readFileSync('./settings/Grupo/Json/welkom.json')) 
-const antilink = JSON.parse(fs.readFileSync('./settings/Grupo/Json/antilink.json'))
-const bngp = JSON.parse(fs.readFileSync('./settings/Grupo/Json/grupo.json'))
-const Antipv = JSON.parse(fs.readFileSync('./settings/Grupo/Json/chat.json'))
-const registro = JSON.parse(fs.readFileSync('./settings/Grupo/Json/registros.json')) 
-const Exportion = JSON.parse(fs.readFileSync('./Games/Json/exportion.json'))
-const Exportion1 = JSON.parse(fs.readFileSync('./Games/Json/exportion1.json'))
-const Cuestions = JSON.parse(fs.readFileSync('./Games/Json/cuestions.json'))
+const welkom = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings', 'Grupo', 'Json', 'welkom.json'))) 
+const antilink = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings', 'Grupo', 'Json', 'antilink.json')))
+const bngp = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings', 'Grupo', 'Json', 'grupo.json')))
+const Antipv = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings', 'Grupo', 'Json', 'chat.json')))
+const registro = JSON.parse(fs.readFileSync(path.join(__dirname, 'settings', 'Grupo', 'Json', 'registros.json'))) 
+const Exportion = JSON.parse(fs.readFileSync(path.join(__dirname, 'Games', 'Json', 'exportion.json')))
+const Exportion1 = JSON.parse(fs.readFileSync(path.join(__dirname, 'Games', 'Json', 'exportion1.json')))
+const Cuestions = JSON.parse(fs.readFileSync(path.join(__dirname, 'Games', 'Json', 'cuestions.json')))
               
    // 𝚃𝙾𝙼𝙰
 const moment = require("moment-timezone") 
