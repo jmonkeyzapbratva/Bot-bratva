@@ -1413,7 +1413,7 @@ try {
 break;
 
 
-//Economía niveles y experiencia 
+/Economía niveles y experiencia 
 
 case 'perfil' : case 'cartera' :
 case 'nivel' : case 'minivel' :{
@@ -2116,7 +2116,7 @@ return enviar("Erro..");
 })
 } catch (e) {
 console.log(e)
-return enviar("Erro...");
+return enviar("Erro..."");
 }
 break;
 
@@ -2151,7 +2151,7 @@ try {
     }, { quoted: info }).catch((e) => console.log(e));
 } catch (e) {
     console.log(e);
-    return enviar("Erro...");
+    return enviar("Erro..."");
 }
 break;
 

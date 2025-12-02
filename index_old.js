@@ -1408,7 +1408,7 @@ try {
   enviar(`( ${ABC.msg} )`);
 } catch (err) { 
   console.error(err);
-  enviar("Erro..");
+  enviar("Erro.."");
 }
 break;
 
@@ -2116,7 +2116,7 @@ return enviar("Erro..");
 })
 } catch (e) {
 console.log(e)
-return enviar("Erro...");
+return enviar("Erro..."");
 }
 break;
 
@@ -2151,7 +2151,7 @@ try {
     }, { quoted: info }).catch((e) => console.log(e));
 } catch (e) {
     console.log(e);
-    return enviar("Erro...");
+    return enviar("Erro..."");
 }
 break;
 
